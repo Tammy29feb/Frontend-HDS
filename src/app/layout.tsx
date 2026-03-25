@@ -75,7 +75,11 @@ function SidebarLink({ href, icon, label }: { href: string; icon: React.ReactNod
       href={href}
       className="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-blue-50 hover:text-blue-600 transition-all group font-medium"
     >
-      {React.cloneElement(icon as React.ReactElement, { className: "w-5 h-5 group-hover:scale-110 transition-transform" })}
+      {React.isValidElement(icon)
+        ? React.cloneElement(icon as React.ReactElement<any>, {
+            className: "w-5 h-5 group-hover:scale-110 transition-transform",
+          })
+        : icon}
       <span>{label}</span>
     </Link>
   );
