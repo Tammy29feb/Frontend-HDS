@@ -35,7 +35,7 @@ export default function Dashboard() {
     <div className="space-y-8 animate-in fade-in duration-500">
       <div className="flex flex-col gap-2">
         <h2 className="text-3xl font-bold tracking-tight">System Overview</h2>
-        <p className="text-muted-foreground">Welcome back, Admin. Here's what's happening today.</p>
+        <p className="text-slate-500">Welcome back, Admin. Here's what's happening today.</p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -49,21 +49,21 @@ export default function Dashboard() {
         <StatCard 
           title="Total Doctors" 
           value={stats.doctors.toString()} 
-          icon={<UserRound className="w-5 h-5 text-emerald-600" />} 
+          icon={<UserRound className="w-5 h-5 text-emerald-400" />} 
           trend="2 new this week" 
           color="border-emerald-500/20 bg-emerald-500/5" 
         />
         <StatCard 
           title="Appointments" 
           value={stats.appointments.toString()} 
-          icon={<CalendarDays className="w-5 h-5 text-amber-600" />} 
+          icon={<CalendarDays className="w-5 h-5 text-amber-400" />} 
           trend="+5% from yesterday" 
           color="border-amber-500/20 bg-amber-500/5" 
         />
         <StatCard 
           title="Active Consultations" 
           value="24" 
-          icon={<Activity className="w-5 h-5 text-rose-600" />} 
+          icon={<Activity className="w-5 h-5 text-rose-400" />} 
           trend="Current capacity: 85%" 
           color="border-rose-500/20 bg-rose-500/5" 
         />
@@ -71,7 +71,7 @@ export default function Dashboard() {
 
       <div className="grid gap-6 md:grid-cols-12">
         {/* Quick Actions - NEW */}
-        <Card className="md:col-span-12 lg:col-span-3 border border-border bg-card/50 backdrop-blur-md">
+        <Card className="md:col-span-12 lg:col-span-3 border border-white/5 bg-white/[0.02] backdrop-blur-md">
           <CardHeader>
             <CardTitle className="text-lg font-semibold text-primary flex items-center gap-2">
               <Plus className="w-5 h-5" />
@@ -87,11 +87,11 @@ export default function Dashboard() {
         </Card>
 
         {/* Charts Section */}
-        <Card className="md:col-span-12 lg:col-span-6 border border-border bg-background backdrop-blur-md overflow-hidden relative">
+        <Card className="md:col-span-12 lg:col-span-6 border border-white/5 bg-white/[0.02] backdrop-blur-md overflow-hidden relative">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
           <CardHeader>
             <CardTitle className="flex items-center justify-between text-lg font-semibold relative z-10">
-              <span className="text-foreground">Patient Inflow Overview</span>
+              <span className="text-slate-200">Patient Inflow Overview</span>
               <button className="text-xs text-primary hover:text-primary/80 flex items-center gap-1 font-medium transition-colors">
                 View Weekly Report <ArrowUpRight className="w-3 h-3" />
               </button>
@@ -101,10 +101,10 @@ export default function Dashboard() {
             {[40, 70, 45, 90, 65, 80, 55].map((height, i) => (
               <div key={i} className="flex-1 flex flex-col items-center gap-2 group">
                 <div 
-                  className="w-full bg-muted rounded-t-lg transition-all duration-500 group-hover:bg-primary group-hover:shadow-[0_0_15px_rgba(34,211,238,0.5)] cursor-pointer" 
+                  className="w-full bg-slate-800/50 rounded-t-lg transition-all duration-500 group-hover:bg-primary group-hover:shadow-[0_0_15px_rgba(34,211,238,0.5)] cursor-pointer" 
                   style={{ height: `${height}%` }}
                 ></div>
-                <span className="text-[10px] text-muted-foreground font-bold tracking-tighter uppercase">{['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'][i]}</span>
+                <span className="text-[10px] text-slate-500 font-bold tracking-tighter uppercase">{['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'][i]}</span>
               </div>
             ))}
           </CardContent>
@@ -113,7 +113,7 @@ export default function Dashboard() {
         {/* Medical Alerts - NEW */}
         <Card className="md:col-span-12 lg:col-span-3 border border-rose-500/20 bg-rose-500/5 backdrop-blur-md">
           <CardHeader>
-            <CardTitle className="text-lg font-semibold text-rose-600 flex items-center gap-2">
+            <CardTitle className="text-lg font-semibold text-rose-400 flex items-center gap-2">
               <ShieldAlert className="w-5 h-5" />
               Medical Alerts
             </CardTitle>
@@ -128,13 +128,13 @@ export default function Dashboard() {
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-7">
         {/* Upcoming Appointments - NEW */}
-        <Card className="col-span-4 border border-border bg-card/50 backdrop-blur-md">
+        <Card className="col-span-4 border border-white/5 bg-white/[0.02] backdrop-blur-md">
           <CardHeader className="flex flex-row items-center justify-between">
-            <CardTitle className="text-lg font-semibold text-foreground flex items-center gap-2">
+            <CardTitle className="text-lg font-semibold text-slate-200 flex items-center gap-2">
               <Clock className="w-5 h-5 text-primary" />
               Upcoming Appointments
             </CardTitle>
-            <button className="text-xs text-muted-foreground hover:text-primary flex items-center gap-1">
+            <button className="text-xs text-slate-500 hover:text-primary flex items-center gap-1">
               View All <ChevronRight className="w-3 h-3" />
             </button>
           </CardHeader>
@@ -148,9 +148,9 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        <Card className="col-span-3 border border-border bg-card/50 backdrop-blur-md">
+        <Card className="col-span-3 border border-white/5 bg-white/[0.02] backdrop-blur-md">
           <CardHeader>
-            <CardTitle className="text-lg font-semibold flex items-center gap-2 text-foreground">
+            <CardTitle className="text-lg font-semibold flex items-center gap-2 text-slate-200">
               <TrendingUp className="w-5 h-5 text-primary" />
               Recent Activities
             </CardTitle>
@@ -168,14 +168,14 @@ export default function Dashboard() {
               desc="Dr. Smith confirmed John Doe." 
               time="15 mins ago" 
               icon={<CalendarDays className="w-4 h-4" />} 
-              color="text-emerald-600 bg-emerald-600/10 border border-emerald-600/20"
+              color="text-emerald-400 bg-emerald-400/10 border border-emerald-400/20"
             />
             <ActivityItem 
               title="System Maintenance" 
               desc="Optimization completed." 
               time="1 hour ago" 
               icon={<Activity className="w-4 h-4" />} 
-              color="text-amber-600 bg-amber-600/10 border border-amber-600/20"
+              color="text-amber-400 bg-amber-400/10 border border-amber-400/20"
             />
           </CardContent>
         </Card>
@@ -198,14 +198,14 @@ function StatCard({ title, value, icon, trend, color }: StatCardProps) {
       <CardContent className="p-6 relative">
         <div className="flex justify-between items-start relative z-10">
           <div className="space-y-2">
-            <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">{title}</p>
-            <p className="text-3xl font-bold text-foreground group-hover:text-primary transition-colors">{value}</p>
+            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">{title}</p>
+            <p className="text-3xl font-bold text-white group-hover:text-primary transition-colors">{value}</p>
           </div>
           <div className={`p-3 rounded-2xl shadow-inner flex items-center justify-center shrink-0`}>
             {icon}
           </div>
         </div>
-        <div className="mt-4 flex items-center gap-1 text-[10px] font-bold text-emerald-600 uppercase tracking-tighter">
+        <div className="mt-4 flex items-center gap-1 text-[10px] font-bold text-emerald-400 uppercase tracking-tighter">
           <TrendingUp className="w-3 h-3" />
           <span>{trend}</span>
         </div>
@@ -217,44 +217,44 @@ function StatCard({ title, value, icon, trend, color }: StatCardProps) {
 
 function QuickActionButton({ icon, label, color }: { icon: React.ReactNode; label: string; color: string }) {
   return (
-    <button className="flex items-center gap-3 p-3 rounded-xl border border-border bg-secondary/30 hover:bg-secondary/50 hover:border-primary/20 transition-all group w-full text-left">
-      <div className={`w-10 h-10 rounded-lg ${color} flex items-center justify-center scale-90 group-hover:scale-100 transition-transform shadow-lg shadow-slate-200/50`}>
+    <button className="flex items-center gap-3 p-3 rounded-xl border border-white/5 bg-white/[0.03] hover:bg-white/[0.08] hover:border-white/10 transition-all group w-full text-left">
+      <div className={`w-10 h-10 rounded-lg ${color} flex items-center justify-center scale-90 group-hover:scale-100 transition-transform shadow-lg shadow-black/20`}>
         {React.isValidElement(icon) ? React.cloneElement(icon as any, { className: "w-5 h-5 text-white" }) : icon}
       </div>
-      <span className="text-sm font-semibold text-foreground/80 group-hover:text-primary transition-colors">{label}</span>
+      <span className="text-sm font-semibold text-slate-300 group-hover:text-white transition-colors">{label}</span>
     </button>
   );
 }
 
 function AlertItem({ title, patient, icon }: { title: string; patient: string; icon: React.ReactNode }) {
   return (
-    <div className="flex items-center gap-3 p-3 rounded-xl bg-card border border-border shadow-sm">
-      <div className="w-8 h-8 rounded-lg bg-rose-600/20 flex items-center justify-center text-rose-600">
+    <div className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/5">
+      <div className="w-8 h-8 rounded-lg bg-rose-500/20 flex items-center justify-center text-rose-400">
         {React.isValidElement(icon) ? React.cloneElement(icon as any, { className: "w-4 h-4" }) : icon}
       </div>
       <div>
-        <p className="text-xs font-bold text-rose-700">{title}</p>
-        <p className="text-[10px] text-muted-foreground font-medium">{patient}</p>
+        <p className="text-xs font-bold text-rose-300">{title}</p>
+        <p className="text-[10px] text-slate-500 font-medium">{patient}</p>
       </div>
     </div>
   );
 }
 
 function AppointmentRow({ name, doctor, time, status }: { name: string; doctor: string; time: string; status: string }) {
-  const statusColor = status === 'Confirmed' ? 'text-emerald-600 bg-emerald-100/50' : status === 'Ongoing' ? 'text-primary bg-primary/10' : 'text-muted-foreground bg-muted';
+  const statusColor = status === 'Confirmed' ? 'text-emerald-400 bg-emerald-400/10' : status === 'Ongoing' ? 'text-primary bg-primary/10' : 'text-slate-400 bg-slate-400/10';
   return (
-    <div className="flex items-center justify-between p-3 rounded-xl border border-border bg-card hover:bg-muted/30 transition-colors group">
+    <div className="flex items-center justify-between p-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.04] transition-colors group">
       <div className="flex items-center gap-3">
-        <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center text-[10px] font-bold text-muted-foreground border border-border">
+        <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-400 border border-white/5">
           {name.split(' ').map(n => n[0]).join('')}
         </div>
         <div>
-          <p className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">{name}</p>
-          <p className="text-xs text-muted-foreground">{doctor}</p>
+          <p className="text-sm font-bold text-slate-200 group-hover:text-primary transition-colors">{name}</p>
+          <p className="text-xs text-slate-500">{doctor}</p>
         </div>
       </div>
       <div className="text-right">
-        <p className="text-xs font-bold text-foreground/80">{time}</p>
+        <p className="text-xs font-bold text-slate-300">{time}</p>
         <span className={`text-[9px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider ${statusColor}`}>{status}</span>
       </div>
     </div>
@@ -276,9 +276,9 @@ function ActivityItem({ title, desc, time, icon, color }: ActivityItemProps) {
         {icon}
       </div>
       <div className="space-y-0.5">
-        <p className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">{title}</p>
-        <p className="text-xs text-muted-foreground leading-snug">{desc}</p>
-        <p className="text-[10px] font-bold text-muted-foreground/60 mt-1 uppercase tracking-tighter">{time}</p>
+        <p className="text-sm font-bold text-slate-200 group-hover:text-primary transition-colors">{title}</p>
+        <p className="text-xs text-slate-500 leading-snug">{desc}</p>
+        <p className="text-[10px] font-bold text-slate-600 mt-1 uppercase tracking-tighter">{time}</p>
       </div>
     </div>
   );
