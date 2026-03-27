@@ -168,14 +168,14 @@ export default function Dashboard() {
               desc="Dr. Smith confirmed John Doe." 
               time="15 mins ago" 
               icon={<CalendarDays className="w-4 h-4" />} 
-              color="text-emerald-400 bg-emerald-400/10 border border-emerald-400/20"
+              color="text-emerald-600 bg-emerald-600/10 border border-emerald-600/20"
             />
             <ActivityItem 
               title="System Maintenance" 
               desc="Optimization completed." 
               time="1 hour ago" 
               icon={<Activity className="w-4 h-4" />} 
-              color="text-amber-400 bg-amber-400/10 border border-amber-400/20"
+              color="text-amber-600 bg-amber-600/10 border border-amber-600/20"
             />
           </CardContent>
         </Card>
@@ -198,7 +198,7 @@ function StatCard({ title, value, icon, trend, color }: StatCardProps) {
       <CardContent className="p-6 relative">
         <div className="flex justify-between items-start relative z-10">
           <div className="space-y-2">
-            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">{title}</p>
+            <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">{title}</p>
             <p className="text-3xl font-bold text-foreground group-hover:text-primary transition-colors">{value}</p>
           </div>
           <div className={`p-3 rounded-2xl shadow-inner flex items-center justify-center shrink-0`}>
@@ -218,7 +218,7 @@ function StatCard({ title, value, icon, trend, color }: StatCardProps) {
 function QuickActionButton({ icon, label, color }: { icon: React.ReactNode; label: string; color: string }) {
   return (
     <button className="flex items-center gap-3 p-3 rounded-xl border border-border bg-secondary/30 hover:bg-secondary/50 hover:border-primary/20 transition-all group w-full text-left">
-      <div className={`w-10 h-10 rounded-lg ${color} flex items-center justify-center scale-90 group-hover:scale-100 transition-transform shadow-lg shadow-black/20`}>
+      <div className={`w-10 h-10 rounded-lg ${color} flex items-center justify-center scale-90 group-hover:scale-100 transition-transform shadow-lg shadow-slate-200/50`}>
         {React.isValidElement(icon) ? React.cloneElement(icon as any, { className: "w-5 h-5 text-white" }) : icon}
       </div>
       <span className="text-sm font-semibold text-foreground/80 group-hover:text-primary transition-colors">{label}</span>
